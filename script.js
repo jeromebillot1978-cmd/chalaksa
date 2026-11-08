@@ -4,7 +4,6 @@
 
 /* --- Configuration : à personnaliser --- */
 const CONFIG = {
-  email: 'contact@lechalaksa.fr',   // adresse qui reçoit les demandes de réservation
   // Horaires utilisés pour le badge "Ouvert / Fermé" (0 = dimanche … 6 = samedi), format [ouverture, fermeture] en heures décimales
   hours: {
     0: [14, 18],
@@ -35,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCatFilter();
   initTilt();
   initGallery();
-  initReviews();
-  initBooking();
   initOpenStatus();
   $('#year').textContent = new Date().getFullYear();
 });
@@ -305,84 +302,6 @@ function initGallery() {
   });
 }
 
-/* ---------- Carrousel des avis ---------- */
-function initReviews() {
-  const track = $('#reviewsTrack');
-  if (!track) return;
-  const step = () => (track.querySelector('.review')?.offsetWidth || 300) + 20;
-  $('#revPrev').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-  $('#revNext').addEventListener('click', () => {
-    const end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 10;
-    track.scrollTo({ left: end ? 0 : track.scrollLeft + step(), behavior: 'smooth' });
-  });
-}
-
-/* ---------- Formulaire de réservation ---------- */
-function initBooking() {
-  const form = $('#bookingForm');
-  const type = $('#f-type');
-  const hotelFields = $$('.js-hotel', form);
-  const stdFields = $$('.js-std', form);
-
-  // Date minimale = aujourd'hui
-  const today = new Date().toISOString().split('T')[0];
-  $$('input[type="date"]', form).forEach(d => d.min = today);
-  $('#f-in').addEventListener('change', e => { $('#f-out').min = e.target.value; });
-
-  const syncFields = () => {
-    const isHotel = type.value === 'hotel';
-    hotelFields.forEach(f => f.hidden = !isHotel);
-    stdFields.forEach(f => f.hidden = isHotel);
-  };
-  type.addEventListener('change', syncFields);
-  syncFields();
-
-  // Boutons qui présélectionnent un type (hôtel, adoption…)
-  $$('[data-reserve]').forEach(btn => btn.addEventListener('click', () => {
-    type.value = btn.dataset.reserve;
-    syncFields();
-  }));
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let valid = true;
-    $$('[required]', form).forEach(input => {
-      const field = input.closest('.field');
-      const ok = input.value.trim() !== '' && input.checkValidity();
-      field.classList.toggle('has-error', !ok);
-      if (!ok) valid = false;
-    });
-    if (type.value === 'hotel' && (!$('#f-in').value || !$('#f-out').value)) {
-      valid = false;
-      $('#f-in').closest('.field').classList.add('has-error');
-      $('#f-out').closest('.field').classList.add('has-error');
-    }
-    if (!valid) { toast('Merci de compléter les champs indiqués.'); return; }
-
-    const d = Object.fromEntries(new FormData(form));
-    const label = type.options[type.selectedIndex].text;
-    const lines = [
-      `Demande : ${label}`,
-      `Nom : ${d.name}`,
-      `Téléphone : ${d.phone}`,
-      `E-mail : ${d.email}`,
-      d.type === 'hotel'
-        ? `Chat : ${d.cat || '-'}\nArrivée : ${d.checkin}\nDépart : ${d.checkout}`
-        : `Date : ${d.date || 'à convenir'}\nPersonnes : ${d.guests}`,
-      `Message : ${d.message || '-'}`
-    ];
-    const subject = encodeURIComponent(`Réservation Le Chalaksa — ${label}`);
-    const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
-    toast('Votre messagerie s’ouvre pour envoyer la demande. Merci ! 🐾');
-    form.reset();
-    syncFields();
-  });
-
-  $$('input, select, textarea', form).forEach(el =>
-    el.addEventListener('input', () => el.closest('.field')?.classList.remove('has-error'))
-  );
-}
 
 /* ---------- Badge ouvert / fermé ---------- */
 function initOpenStatus() {
@@ -396,12 +315,3 @@ function initOpenStatus() {
   el.classList.add(open ? 'is-open' : 'is-closed');
 }
 
-/* ---------- Notification ---------- */
-let toastTimer;
-function toast(msg) {
-  const t = $('#toast');
-  t.textContent = msg;
-  t.classList.add('is-visible');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('is-visible'), 4000);
-}
