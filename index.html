@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le Chalaksa — Bar à chats, salon de thé & cuisine singapourienne</title>
+  <meta name="description" content="Le Chalaksa : bar à chats à thème asiatique, cuisine singapourienne le midi, salon de thé gourmand, hôtel pour chats, adoptions responsables et épicerie fine asiatique.">
+  <meta name="keywords" content="bar à chats, cat café, salon de thé, cuisine singapourienne, laksa, bubble tea, hôtel pour chats, pension féline, adoption chat, épicerie asiatique">
+  <meta name="author" content="Le Chalaksa">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7A1418">
+  <!-- À remplacer par votre vrai nom de domaine -->
+  <link rel="canonical" href="https://www.lechalaksa.fr/">
+
+  <!-- Open Graph / réseaux sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le Chalaksa">
+  <meta property="og:title" content="Le Chalaksa — Bar à chats & salon de thé asiatique">
+  <meta property="og:description" content="Là où les chats, la gastronomie et la culture asiatique se rencontrent.">
+  <meta property="og:url" content="https://www.lechalaksa.fr/">
+  <meta property="og:image" content="https://www.lechalaksa.fr/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Applique le thème avant l'affichage (évite le flash) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chalaksa-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    })();
+  </script>
+
+  <!-- Données structurées (SEO local) — compléter adresse, téléphone, horaires -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Le Chalaksa",
+    "description": "Bar à chats à thème asiatique, cuisine singapourienne, salon de thé, hôtel pour chats, adoptions responsables et épicerie fine asiatique.",
+    "url": "https://www.lechalaksa.fr/",
+    "image": "https://www.lechalaksa.fr/assets/og-image.jpg",
+    "servesCuisine": ["Singapourienne", "Asiatique", "Salon de thé", "Bubble tea"],
+    "priceRange": "€€",
+    "telephone": "+33000000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Adresse à compléter",
+      "addressLocality": "Ville",
+      "postalCode": "00000",
+      "addressCountry": "FR"
+    },
+    "sameAs": ["https://www.facebook.com/"]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ========== Sprite SVG : Maneki-neko (logo) ========== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="mk-bg" cx="50%" cy="38%" r="65%">
+        <stop offset="0" stop-color="#F7DE9C"/>
+        <stop offset="1" stop-color="#C8933A"/>
+      </radialGradient>
+      <linearGradient id="mk-gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FCEBB0"/>
+        <stop offset=".5" stop-color="#D6A94C"/>
+        <stop offset="1" stop-color="#9A6E22"/>
+      </linearGradient>
+    </defs>
+    <symbol id="maneki" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="96" fill="url(#mk-bg)"/>
+      <circle cx="100" cy="100" r="91" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>
+      <!-- queue -->
+      <path d="M140 170 q32 -4 28 -36 q-2 -10 -11 -8 q6 24 -19 32z" fill="#E2833A" stroke="#3A2A20" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- corps -->
+      <ellipse cx="100" cy="142" rx="50" ry="44" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.5"/>
+      <!-- patte levée (animée) -->
+      <g class="mk-paw">
+        <rect x="146" y="56" width="26" height="60" rx="13" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.5"/>
+        <ellipse cx="159" cy="68" rx="6" ry="5" fill="#F4A3AE"/>
+        <circle cx="152" cy="60" r="2.4" fill="#F4A3AE"/>
+        <circle cx="159" cy="58" r="2.4" fill="#F4A3AE"/>
+        <circle cx="166" cy="60" r="2.4" fill="#F4A3AE"/>
+      </g>
+      <!-- oreilles -->
+      <path d="M58 72 L60 30 Q80 40 90 54 Z" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M142 72 L140 30 Q120 40 110 54 Z" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M65 62 L66 41 Q77 47 83 55 Z" fill="#F4A3AE"/>
+      <path d="M135 62 L134 41 Q123 47 117 55 Z" fill="#F4A3AE"/>
+      <!-- tête -->
+      <ellipse cx="100" cy="86" rx="48" ry="40" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.5"/>
+      <path d="M58 76 Q64 52 92 48 Q84 66 66 86 Q60 84 58 76Z" fill="#E2833A"/>
+      <path d="M132 54 Q144 62 146 78 Q136 72 128 60Z" fill="#E2833A"/>
+      <!-- visage -->
+      <path d="M76 88 q8 -9 16 0 M108 88 q8 -9 16 0" fill="none" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="74" cy="99" rx="7" ry="4" fill="#F4A3AE" opacity=".7"/>
+      <ellipse cx="126" cy="99" rx="7" ry="4" fill="#F4A3AE" opacity=".7"/>
+      <path d="M96 96 h8 l-4 5z" fill="#E86A7A"/>
+      <path d="M92 104 q4 4 8 0 q4 4 8 0" fill="none" stroke="#3A2A20" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 96 l-14 -3 M60 101 l-14 2 M140 96 l14 -3 M140 101 l14 2" stroke="#3A2A20" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- collier + clochette -->
+      <path d="M62 114 Q100 132 138 114 L138 122 Q100 140 62 122 Z" fill="#B3201F" stroke="#3A2A20" stroke-width="2"/>
+      <circle cx="100" cy="132" r="8" fill="url(#mk-gold)" stroke="#7A5418" stroke-width="1.5"/>
+      <path d="M93 131 h14" stroke="#7A5418" stroke-width="1.4"/>
+      <!-- pièce koban -->
+      <ellipse cx="74" cy="154" rx="17" ry="23" fill="url(#mk-gold)" stroke="#7A5418" stroke-width="2"/>
+      <text x="74" y="161" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="18" font-weight="700" fill="#7A1418">福</text>
+      <ellipse cx="86" cy="170" rx="13" ry="8" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.2"/>
+      <!-- pattes -->
+      <ellipse cx="88" cy="184" rx="13" ry="7" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.2"/>
+      <ellipse cx="116" cy="184" rx="13" ry="7" fill="#FFF9F0" stroke="#3A2A20" stroke-width="2.2"/>
+    </symbol>
+  </svg>
+
+  <!-- ========== Préchargeur ========== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="preloader__logo"><use href="#maneki"/></svg>
+    <p class="preloader__text">Le Chalaksa</p>
+    <span class="preloader__bar"><span></span></span>
+  </div>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ========== En-tête / navigation sticky ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="brand" aria-label="Le Chalaksa — accueil">
+        <svg class="brand__logo"><use href="#maneki"/></svg>
+        <span class="brand__name">Le Chalaksa</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#apropos" class="nav__link">Le lieu</a></li>
+          <li><a href="#univers" class="nav__link">Univers</a></li>
+          <li><a href="#menu" class="nav__link">La carte</a></li>
+          <li><a href="#chats" class="nav__link">Nos chats</a></li>
+          <li><a href="#hotel" class="nav__link">Hôtel félin</a></li>
+          <li><a href="#galerie" class="nav__link">Galerie</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="#reservation" class="btn btn--gold nav__cta">Réserver</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        </button>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== 1. HERO ========== -->
+    <section class="hero" id="accueil">
+      <div class="hero__media ph" data-parallax style="--img:url('assets/hero.jpg')"></div>
+      <div class="hero__veil"></div>
+      <div class="hero__lanterns" id="lanterns" aria-hidden="true"></div>
+      <span class="hero__kanji" aria-hidden="true">招き猫</span>
+
+      <div class="container hero__content">
+        <svg class="hero__logo" role="img" aria-label="Logo Le Chalaksa — chat porte-bonheur"><use href="#maneki"/></svg>
+        <p class="eyebrow eyebrow--light hero__eyebrow">Bar à chats · Salon de thé · Cuisine de Singapour</p>
+        <h1 class="hero__title"><span class="hero__line">Le</span> <em class="hero__line">Chalaksa</em></h1>
+        <p class="hero__slogan">Là où les chats, la gastronomie et la culture asiatique se rencontrent.</p>
+        <div class="hero__actions">
+          <a href="#reservation" class="btn btn--gold btn--lg">Réserver</a>
+          <a href="#contact" class="btn btn--glass btn--lg">Nous contacter</a>
+        </div>
+      </div>
+
+      <a href="#apropos" class="hero__scroll" aria-label="Défiler vers la présentation">
+        <span>Découvrir</span><i></i>
+      </a>
+    </section>
+
+    <!-- Bandeau défilant -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Bar à chats</span><b>✦</b><span>Cuisine singapourienne</span><b>✦</b><span>Salon de thé</span><b>✦</b><span>Hôtel félin</span><b>✦</b><span>Adoptions responsables</span><b>✦</b><span>Épicerie fine</span><b>✦</b>
+        <span>Bar à chats</span><b>✦</b><span>Cuisine singapourienne</span><b>✦</b><span>Salon de thé</span><b>✦</b><span>Hôtel félin</span><b>✦</b><span>Adoptions responsables</span><b>✦</b><span>Épicerie fine</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ========== 2. À PROPOS ========== -->
+    <section class="section about" id="apropos">
+      <div class="container about__grid">
+        <div class="about__visual reveal">
+          <div class="about__img about__img--main ph" style="--img:url('assets/about-1.jpg')" role="img" aria-label="Intérieur du Chalaksa"></div>
+          <div class="about__img about__img--small ph" style="--img:url('assets/about-2.jpg')" role="img" aria-label="Un chat du Chalaksa"></div>
+          <div class="about__seal" aria-hidden="true">福</div>
+        </div>
+
+        <div class="about__text">
+          <p class="eyebrow reveal">Notre histoire</p>
+          <h2 class="title reveal">Un refuge de douceur,<br><em>au parfum d'Asie</em></h2>
+          <p class="lead reveal">Le Chalaksa est un lieu unique où gourmandise, bien-être animal et découverte de la culture asiatique se rencontrent dans une ambiance chaleureuse.</p>
+          <p class="reveal">Le midi, nos cuisines célèbrent les saveurs de Singapour. L'après-midi, le salon de thé s'éveille autour de pâtisseries maison et de thés d'exception. Et toujours, nos chats veillent sur vous — certains n'attendent qu'une famille pour la vie.</p>
+
+          <div class="stats reveal">
+            <div class="stat"><span class="stat__num" data-count="6">0</span><span class="stat__label">univers réunis</span></div>
+            <div class="stat"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="stat__label">amour félin</span></div>
+            <div class="stat"><span class="stat__num">∞</span><span class="stat__label">ronronnements</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3. NOS UNIVERS ========== -->
+    <section class="section universes" id="univers">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Six expériences, un seul lieu</p>
+          <h2 class="title reveal">Nos <em>univers</em></h2>
+          <p class="section__intro reveal">Chaque espace du Chalaksa a été pensé comme une parenthèse : savourer, se détendre, rencontrer, adopter.</p>
+        </header>
+
+        <div class="cards">
+          <article class="u-card reveal" data-tilt>
+            <span class="u-card__num">01</span>
+            <span class="u-card__icon" aria-hidden="true">🐱</span>
+            <h3>Bar à chats</h3>
+            <p>Un salon apaisant où nos pensionnaires circulent librement. Caresses, jeux et moments de grâce garantis.</p>
+            <a href="#chats" class="u-card__link">Rencontrer nos chats <span>→</span></a>
+          </article>
+          <article class="u-card reveal" data-tilt data-delay="1">
+            <span class="u-card__num">02</span>
+            <span class="u-card__icon" aria-hidden="true">🍜</span>
+            <h3>Cuisine singapourienne</h3>
+            <p>Laksa, chicken rice, nasi lemak… Une cuisine de rue sublimée, préparée chaque midi avec des produits frais.</p>
+            <a href="#menu" class="u-card__link">Voir la carte <span>→</span></a>
+          </article>
+          <article class="u-card reveal" data-tilt data-delay="2">
+            <span class="u-card__num">03</span>
+            <span class="u-card__icon" aria-hidden="true">🍵</span>
+            <h3>Salon de thé</h3>
+            <p>L'après-midi, thés premium, bubble teas et desserts maison dans un cocon feutré.</p>
+            <a href="#menu" class="u-card__link">Nos thés <span>→</span></a>
+          </article>
+          <article class="u-card reveal" data-tilt>
+            <span class="u-card__num">04</span>
+            <span class="u-card__icon" aria-hidden="true">🏨</span>
+            <h3>Hôtel pour chats</h3>
+            <p>Partez l'esprit léger : chambres individuelles, attention quotidienne et nouvelles en photos.</p>
+            <a href="#hotel" class="u-card__link">Découvrir l'hôtel <span>→</span></a>
+          </article>
+          <article class="u-card reveal" data-tilt data-delay="1">
+            <span class="u-card__num">05</span>
+            <span class="u-card__icon" aria-hidden="true">❤️</span>
+            <h3>Adoptions responsables</h3>
+            <p>Nous accompagnons chaque rencontre pour que l'adoption soit un engagement réfléchi et heureux.</p>
+            <a href="#chats" class="u-card__link">Chats à l'adoption <span>→</span></a>
+          </article>
+          <article class="u-card reveal" data-tilt data-delay="2">
+            <span class="u-card__num">06</span>
+            <span class="u-card__icon" aria-hidden="true">🥢</span>
+            <h3>Épicerie fine asiatique</h3>
+            <p>Thés en vrac, sauces, condiments et douceurs d'Asie sélectionnés pour prolonger le voyage chez vous.</p>
+            <a href="#contact" class="u-card__link">Nous rendre visite <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. MENU ========== -->
+    <section class="section menu" id="menu">
+      <div class="menu__bg ph" style="--img:url('assets/menu-bg.jpg')" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow eyebrow--light reveal">Fait maison, chaque jour</p>
+          <h2 class="title title--light reveal">La <em>carte</em></h2>
+        </header>
+
+        <div class="signature glass reveal">
+          <span class="signature__tag">Signature</span>
+          <div>
+            <h3>Le Laksa du Chalaksa</h3>
+            <p>Bouillon coco-curry parfumé à la citronnelle, nouilles de riz, crevettes, tofu soufflé, œuf mollet et herbes fraîches. Le plat qui a inspiré notre nom.</p>
+          </div>
+          <span class="signature__price">14,90 €</span>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Catégories de la carte">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="p-plats" id="t-plats">Plats singapouriens</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-snacks" id="t-snacks" tabindex="-1">Snacks asiatiques</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-bubble" id="t-bubble" tabindex="-1">Bubble tea</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-thes" id="t-thes" tabindex="-1">Thés premium</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-desserts" id="t-desserts" tabindex="-1">Desserts maison</button>
+        </div>
+
+        <!-- Les prix ci-dessous sont indicatifs : à ajuster -->
+        <div class="panels glass reveal">
+          <div class="panel is-active" role="tabpanel" id="p-plats" aria-labelledby="t-plats">
+            <p class="panel__note">Servis le midi · du mardi au samedi</p>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h4>Hainanese Chicken Rice</h4><i></i><span>13,50 €</span></div><p>Poulet poché fondant, riz parfumé au bouillon, sauces chili-gingembre et soja noir.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Nasi Lemak</h4><i></i><span>13,90 €</span></div><p>Riz au lait de coco, sambal maison, poulet croustillant, cacahuètes, œuf et concombre.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Char Kway Teow</h4><i></i><span>13,50 €</span></div><p>Nouilles de riz sautées au wok, crevettes, pousses de soja, ciboulette chinoise. <em class="pill">Épicé</em></p></li>
+              <li class="dish"><div class="dish__head"><h4>Mee Goreng</h4><i></i><span>12,90 €</span></div><p>Nouilles jaunes sautées, légumes croquants, tofu et sauce tomate-piment douce.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Satay & riz pressé</h4><i></i><span>12,50 €</span></div><p>Brochettes marinées grillées, sauce cacahuète, ketupat et oignons rouges.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Curry de légumes Nonya</h4><i></i><span>12,50 €</span></div><p>Légumes de saison mijotés au lait de coco et épices peranakan. <em class="pill pill--veg">Végétarien</em></p></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-snacks" aria-labelledby="t-snacks" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h4>Bao au porc caramélisé</h4><i></i><span>6,50 €</span></div><p>Pain vapeur moelleux, porc laqué, pickles et coriandre.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Gyoza grillés (6)</h4><i></i><span>7,00 €</span></div><p>Raviolis poulet-légumes, sauce ponzu maison.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Curry puffs (3)</h4><i></i><span>6,00 €</span></div><p>Chaussons feuilletés au curry de pommes de terre. <em class="pill pill--veg">Végétarien</em></p></li>
+              <li class="dish"><div class="dish__head"><h4>Rouleaux de printemps</h4><i></i><span>6,50 €</span></div><p>Crevettes, herbes fraîches et vermicelles, sauce cacahuète.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Kaya toast</h4><i></i><span>5,50 €</span></div><p>Le classique du petit-déjeuner singapourien : confiture coco-pandan et beurre.</p></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-bubble" aria-labelledby="t-bubble" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h4>Brown Sugar Tiger</h4><i></i><span>6,20 €</span></div><p>Lait frais, perles de tapioca au sucre brun caramélisé.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Matcha Latte Perles</h4><i></i><span>6,50 €</span></div><p>Matcha cérémonial, lait au choix, perles de tapioca.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Taro Velours</h4><i></i><span>6,20 €</span></div><p>Taro onctueux, lait de coco, perles noires.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Mangue – Passion</h4><i></i><span>5,90 €</span></div><p>Thé vert au jasmin, fruits frais, perles éclatantes.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Thai Tea</h4><i></i><span>5,90 €</span></div><p>Thé noir épicé, lait concentré, glace pilée.</p></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-thes" aria-labelledby="t-thes" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h4>Jasmin Perles de Dragon</h4><i></i><span>5,50 €</span></div><p>Chine · Thé vert roulé à la main, parfumé aux fleurs de jasmin.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Oolong Tie Guan Yin</h4><i></i><span>6,00 €</span></div><p>Chine · Floral et crémeux, infusions multiples.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Sencha Premium</h4><i></i><span>5,50 €</span></div><p>Japon · Notes végétales et iodées, belle fraîcheur.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Genmaicha</h4><i></i><span>5,00 €</span></div><p>Japon · Thé vert et riz grillé, rond et réconfortant.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Pu-erh Impérial</h4><i></i><span>6,50 €</span></div><p>Yunnan · Thé fermenté, boisé et profond.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Cérémonie du matcha</h4><i></i><span>8,50 €</span></div><p>Japon · Matcha fouetté minute, servi avec un wagashi.</p></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-desserts" aria-labelledby="t-desserts" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h4>Pandan Chiffon Cake</h4><i></i><span>5,50 €</span></div><p>Génoise aérienne au pandan, chantilly coco.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Mochis glacés (3)</h4><i></i><span>6,00 €</span></div><p>Sésame noir, matcha, mangue.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Cheesecake Matcha</h4><i></i><span>6,50 €</span></div><p>Crémeux et léger, base sablé au sésame.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Dorayaki Maneki</h4><i></i><span>5,00 €</span></div><p>Pancakes japonais, pâte de haricots rouges, empreinte de patte.</p></li>
+              <li class="dish"><div class="dish__head"><h4>Chendol</h4><i></i><span>6,00 €</span></div><p>Glace pilée, lait de coco, sirop gula melaka et vermicelles pandan.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. NOS CHATS ========== -->
+    <section class="section cats" id="chats">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Les maîtres des lieux</p>
+          <h2 class="title reveal">Nos <em>chats</em></h2>
+          <p class="section__intro reveal">Résidents permanents ou en attente d'une famille, chacun a son caractère. Toutes nos adoptions se font après rencontre, échange et visite de pré-adoption.</p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filtrer les chats">
+          <button class="filter is-active" data-filter="all">Tous</button>
+          <button class="filter" data-filter="adoptable">À l'adoption</button>
+          <button class="filter" data-filter="resident">Résidents</button>
+        </div>
+
+        <!-- Remplacez noms, photos et descriptions par vos vrais pensionnaires -->
+        <div class="cat-grid">
+          <article class="cat-card reveal" data-status="adoptable">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/mochi.jpg')" role="img" aria-label="Mochi"><span class="badge badge--adopt">Adoptable</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Mochi</h3><span class="cat-card__age">2 ans</span></div>
+              <p>Douce et curieuse, Mochi adore les genoux chauds et les après-midis au soleil.</p>
+              <ul class="chips"><li>Câline</li><li>Calme</li><li>OK enfants</li></ul>
+              <a href="#reservation" class="cat-card__cta" data-reserve="adoption">Rencontrer Mochi</a>
+            </div>
+          </article>
+
+          <article class="cat-card reveal" data-status="resident" data-delay="1">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/yuzu.jpg')" role="img" aria-label="Yuzu"><span class="badge badge--resident">Résident</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Yuzu</h3><span class="cat-card__age">4 ans</span></div>
+              <p>Le chef d'orchestre du salon. Yuzu accueille chaque visiteur avec un ronron majestueux.</p>
+              <ul class="chips"><li>Sociable</li><li>Gourmand</li></ul>
+              <span class="cat-card__info">Vit au Chalaksa</span>
+            </div>
+          </article>
+
+          <article class="cat-card reveal" data-status="adoptable" data-delay="2">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/sakura.jpg')" role="img" aria-label="Sakura"><span class="badge badge--adopt">Adoptable</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Sakura</h3><span class="cat-card__age">1 an</span></div>
+              <p>Un tourbillon de joie : Sakura cherche une famille joueuse prête à suivre son énergie.</p>
+              <ul class="chips"><li>Joueuse</li><li>Énergique</li></ul>
+              <a href="#reservation" class="cat-card__cta" data-reserve="adoption">Rencontrer Sakura</a>
+            </div>
+          </article>
+
+          <article class="cat-card reveal" data-status="resident">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/bao.jpg')" role="img" aria-label="Bao"><span class="badge badge--resident">Résident</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Bao</h3><span class="cat-card__age">6 ans</span></div>
+              <p>Philosophe à ses heures, Bao observe le monde depuis son arbre à chat préféré.</p>
+              <ul class="chips"><li>Sage</li><li>Indépendant</li></ul>
+              <span class="cat-card__info">Vit au Chalaksa</span>
+            </div>
+          </article>
+
+          <article class="cat-card reveal" data-status="adoptable" data-delay="1">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/kumo.jpg')" role="img" aria-label="Kumo"><span class="badge badge--reserved">Réservé</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Kumo</h3><span class="cat-card__age">3 ans</span></div>
+              <p>Un nuage de poils tout doux. Kumo a trouvé sa future famille et prépare son départ.</p>
+              <ul class="chips"><li>Tendre</li><li>Discret</li></ul>
+              <span class="cat-card__info">Adoption en cours</span>
+            </div>
+          </article>
+
+          <article class="cat-card reveal" data-status="adoptable" data-delay="2">
+            <div class="cat-card__photo ph" style="--img:url('assets/chats/matcha.jpg')" role="img" aria-label="Matcha"><span class="badge badge--adopt">Adoptable</span></div>
+            <div class="cat-card__body">
+              <div class="cat-card__top"><h3>Matcha</h3><span class="cat-card__age">8 mois</span></div>
+              <p>Jeune explorateur aux yeux verts, Matcha rêve d'un foyer avec plein de cachettes.</p>
+              <ul class="chips"><li>Curieux</li><li>Affectueux</li></ul>
+              <a href="#reservation" class="cat-card__cta" data-reserve="adoption">Rencontrer Matcha</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="adopt-steps reveal">
+          <h3>Adopter au Chalaksa, en 4 étapes</h3>
+          <ol>
+            <li><b>1</b><span>Rencontre au bar à chats</span></li>
+            <li><b>2</b><span>Échange avec notre équipe</span></li>
+            <li><b>3</b><span>Visite de pré-adoption</span></li>
+            <li><b>4</b><span>Départ & suivi bienveillant</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. HÔTEL FÉLIN ========== -->
+    <section class="section hotel" id="hotel">
+      <div class="container hotel__grid">
+        <div class="hotel__visual reveal">
+          <div class="hotel__img ph" style="--img:url('assets/hotel.jpg')" role="img" aria-label="Chambre de l'hôtel félin"></div>
+          <div class="hotel__float glass">
+            <span class="hotel__float-icon">📸</span>
+            <div><strong>Nouvelles quotidiennes</strong><small>Photos envoyées chaque jour</small></div>
+          </div>
+        </div>
+
+        <div class="hotel__text">
+          <p class="eyebrow reveal">Pension de luxe</p>
+          <h2 class="title reveal">L'<em>Hôtel</em> Félin</h2>
+          <p class="lead reveal">Pendant vos absences, votre chat profite d'un séjour au calme, dans un environnement sain, chaleureux et surveillé.</p>
+
+          <ul class="services">
+            <li class="service reveal"><span class="service__icon">🛏️</span><div><h3>Chambres individuelles</h3><p>Un espace privatif, confortable et désinfecté entre chaque séjour.</p></div></li>
+            <li class="service reveal" data-delay="1"><span class="service__icon">👁️</span><div><h3>Surveillance quotidienne</h3><p>Soins, repas selon ses habitudes, jeux et câlins chaque jour.</p></div></li>
+            <li class="service reveal" data-delay="2"><span class="service__icon">💌</span><div><h3>Photos aux propriétaires</h3><p>Vous recevez des nouvelles et des photos de votre compagnon.</p></div></li>
+            <li class="service reveal" data-delay="3"><span class="service__icon">🗓️</span><div><h3>Réservation en ligne</h3><p>Choisissez vos dates en quelques clics, nous confirmons rapidement.</p></div></li>
+          </ul>
+
+          <a href="#reservation" class="btn btn--red reveal" data-reserve="hotel">Réserver un séjour</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. GALERIE ========== -->
+    <section class="section gallery" id="galerie">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Instants choisis</p>
+          <h2 class="title reveal">La <em>galerie</em></h2>
+        </header>
+
+        <div class="masonry">
+          <button class="g-item g-item--tall reveal" style="--img:url('assets/galerie/1.jpg')" data-caption="Le salon des chats"><span>Le salon des chats</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/2.jpg')" data-caption="Laksa signature"><span>Laksa signature</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/3.jpg')" data-caption="Cérémonie du matcha"><span>Cérémonie du matcha</span></button>
+          <button class="g-item g-item--tall reveal" style="--img:url('assets/galerie/4.jpg')" data-caption="Sieste au soleil"><span>Sieste au soleil</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/5.jpg')" data-caption="Bubble teas maison"><span>Bubble teas maison</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/6.jpg')" data-caption="L'épicerie fine"><span>L'épicerie fine</span></button>
+          <button class="g-item g-item--tall reveal" style="--img:url('assets/galerie/7.jpg')" data-caption="L'hôtel félin"><span>L'hôtel félin</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/8.jpg')" data-caption="Desserts du jour"><span>Desserts du jour</span></button>
+          <button class="g-item reveal" style="--img:url('assets/galerie/9.jpg')" data-caption="Lanternes et douceur"><span>Lanternes et douceur</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 8. AVIS CLIENTS ========== -->
+    <!-- IMPORTANT : textes d'exemple. Remplacez-les par de vrais avis (Google / Facebook) avec l'accord des clients, puis retirez les badges "Exemple". -->
+    <section class="section reviews" id="avis">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Ils en parlent</p>
+          <h2 class="title reveal">Avis <em>clients</em></h2>
+        </header>
+
+        <div class="reviews__track" id="reviewsTrack">
+          <figure class="review glass reveal">
+            <span class="review__sample">Exemple</span>
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>Texte d'exemple : remplacez-le par l'avis d'un client sur l'ambiance, les chats et la cuisine.</blockquote>
+            <figcaption><span class="avatar">A</span><div><strong>Prénom N.</strong><small>Source de l'avis</small></div></figcaption>
+          </figure>
+          <figure class="review glass reveal" data-delay="1">
+            <span class="review__sample">Exemple</span>
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>Texte d'exemple : un témoignage sur le salon de thé, les desserts ou les bubble teas.</blockquote>
+            <figcaption><span class="avatar">B</span><div><strong>Prénom N.</strong><small>Source de l'avis</small></div></figcaption>
+          </figure>
+          <figure class="review glass reveal" data-delay="2">
+            <span class="review__sample">Exemple</span>
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>Texte d'exemple : un retour d'un propriétaire sur un séjour à l'hôtel félin.</blockquote>
+            <figcaption><span class="avatar">C</span><div><strong>Prénom N.</strong><small>Source de l'avis</small></div></figcaption>
+          </figure>
+          <figure class="review glass reveal" data-delay="3">
+            <span class="review__sample">Exemple</span>
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>Texte d'exemple : le récit d'une adoption réussie grâce au Chalaksa.</blockquote>
+            <figcaption><span class="avatar">D</span><div><strong>Prénom N.</strong><small>Source de l'avis</small></div></figcaption>
+          </figure>
+        </div>
+
+        <div class="reviews__nav">
+          <button class="round-btn" id="revPrev" aria-label="Avis précédent">←</button>
+          <a class="btn btn--outline" href="https://www.facebook.com/search/top?q=Le%20Chalaksa" target="_blank" rel="noopener">Laisser un avis</a>
+          <button class="round-btn" id="revNext" aria-label="Avis suivant">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RÉSERVATION ========== -->
+    <section class="section booking" id="reservation">
+      <div class="booking__pattern" aria-hidden="true"></div>
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="eyebrow eyebrow--light reveal">Réservation</p>
+          <h2 class="title title--light reveal">Réservez votre <em>parenthèse</em></h2>
+          <p class="reveal">Une table au bar à chats, un goûter au salon de thé, un séjour à l'hôtel félin ou une rencontre en vue d'une adoption : dites-nous tout, nous vous confirmons rapidement.</p>
+          <ul class="booking__perks reveal">
+            <li>✦ Confirmation par e-mail ou téléphone</li>
+            <li>✦ Accueil limité pour le confort des chats</li>
+            <li>✦ Enfants bienvenus, accompagnés</li>
+          </ul>
+        </div>
+
+        <form class="form glass reveal" id="bookingForm" novalidate>
+          <div class="field field--full">
+            <label for="f-type">Je souhaite réserver</label>
+            <select id="f-type" name="type" required>
+              <option value="table">Une table — bar à chats</option>
+              <option value="the">Le salon de thé</option>
+              <option value="hotel">Un séjour à l'hôtel félin</option>
+              <option value="adoption">Une rencontre adoption</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-name">Nom</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-phone">Téléphone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field field--full"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+
+          <div class="field js-std"><label for="f-date">Date</label><input id="f-date" name="date" type="date"></div>
+          <div class="field js-std"><label for="f-guests">Personnes</label>
+            <select id="f-guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select>
+          </div>
+
+          <div class="field js-hotel" hidden><label for="f-cat">Nom du chat</label><input id="f-cat" name="cat" type="text"></div>
+          <div class="field js-hotel" hidden><label for="f-in">Arrivée</label><input id="f-in" name="checkin" type="date"></div>
+          <div class="field js-hotel" hidden><label for="f-out">Départ</label><input id="f-out" name="checkout" type="date"></div>
+
+          <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="3" placeholder="Allergies, occasion spéciale, habitudes de votre chat…"></textarea></div>
+          <button type="submit" class="btn btn--gold btn--block">Envoyer ma demande</button>
+          <p class="form__legal">Vos informations servent uniquement à traiter votre demande.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== 9. CONTACT ========== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Venir au Chalaksa</p>
+          <h2 class="title reveal">Nous <em>contacter</em></h2>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__info">
+            <!-- À COMPLÉTER : adresse, téléphone, e-mail, horaires réels -->
+            <div class="info-card glass reveal">
+              <span class="info-card__icon">📍</span>
+              <div><h3>Adresse</h3><p>[Adresse à compléter]<br>[Code postal] [Ville]</p></div>
+            </div>
+            <div class="info-card glass reveal" data-delay="1">
+              <span class="info-card__icon">📞</span>
+              <div><h3>Téléphone & e-mail</h3><p><a href="tel:+33000000000">[Téléphone]</a><br><a href="mailto:contact@lechalaksa.fr">contact@lechalaksa.fr</a></p></div>
+            </div>
+            <div class="info-card glass reveal" data-delay="2">
+              <span class="info-card__icon">🕰️</span>
+              <div class="hours">
+                <h3>Horaires <span class="open-status" id="openStatus"></span></h3>
+                <ul>
+                  <li><span>Lundi</span><span>Fermé</span></li>
+                  <li><span>Mardi – Vendredi</span><span>11h30 – 18h30</span></li>
+                  <li><span>Samedi</span><span>11h00 – 19h00</span></li>
+                  <li><span>Dimanche</span><span>14h00 – 18h00</span></li>
+                </ul>
+                <small>Cuisine le midi · salon de thé l'après-midi</small>
+              </div>
+            </div>
+            <div class="socials reveal">
+              <a href="https://www.facebook.com/search/top?q=Le%20Chalaksa" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/></svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg viewBox="0 0 24 24"><path d="M16 3c.4 2.3 1.8 3.8 4 4v3.3c-1.5 0-2.9-.4-4-1.2V15a6 6 0 1 1-6-6h.5v3.4A2.7 2.7 0 1 0 12.7 15V3H16z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="map reveal">
+            <!-- Remplacez "Le Chalaksa" dans l'URL par l'adresse exacte pour un positionnement précis -->
+            <iframe title="Carte d'accès au Chalaksa" src="https://www.google.com/maps?q=Le%20Chalaksa&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Pied de page ========== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#accueil" class="brand brand--footer"><svg class="brand__logo"><use href="#maneki"/></svg><span class="brand__name">Le Chalaksa</span></a>
+        <p>Bar à chats · Salon de thé · Cuisine singapourienne · Hôtel félin · Adoptions · Épicerie fine</p>
+      </div>
+      <nav class="footer__nav" aria-label="Liens de pied de page">
+        <a href="#univers">Univers</a><a href="#menu">La carte</a><a href="#chats">Nos chats</a><a href="#hotel">Hôtel félin</a><a href="#reservation">Réserver</a><a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__kanji" aria-hidden="true">招き猫</p>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Le Chalaksa. Tous droits réservés.</p>
+      <p><a href="#">Mentions légales</a> · Site réalisé par <a href="https://dev.jercat.fr" target="_blank" rel="noopener">Jercat</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox galerie -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement de la photo" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Fermer">×</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lbPrev" aria-label="Photo précédente">‹</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__img ph" id="lbImg"></div>
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__arrow lightbox__arrow--next" id="lbNext" aria-label="Photo suivante">›</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#accueil" class="to-top" id="toTop" aria-label="Retour en haut">↑</a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
